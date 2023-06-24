@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'partners',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +77,20 @@ WSGI_APPLICATION = 'viability.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'viability_oi',     # Nome do banco de dados
+        'USER': 'rafael',         # Nome de usuário do MySQL
+        'PASSWORD': '@Avell123', # Senha do MySQL
+        'HOST': 'localhost',      # Host do MySQL (geralmente 'localhost' se estiver rodando localmente)
+        'PORT': '3306',           # Porta do MySQL (geralmente '3306')
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
