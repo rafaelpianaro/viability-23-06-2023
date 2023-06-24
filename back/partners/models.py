@@ -7,8 +7,9 @@ class Partners(models.Model):
     # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     id = models.AutoField(primary_key=True)
     nome_parceiro = models.CharField(max_length=100)
-    endereco_parceiro = models.CharField(max_length=100)
-    cnpj_parceiro = models.IntegerField()
+    endereco_parceiro = models.CharField(max_length=255)
+    cnpj_parceiro = models.CharField(max_length=100)
+    # cnpj_parceiro = models.IntegerField()
     uf_cobertura = models.CharField(max_length=100)
 
 class Viability(models.Model):
