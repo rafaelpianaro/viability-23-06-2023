@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+# from django.contrib import admin
 from django.urls import path, include
 
 
@@ -23,11 +23,13 @@ from rest_framework import routers
 from partners.api import viewsets as partnersviewsets
 
 route = routers.DefaultRouter()
-
 route.register(r'partners', partnersviewsets.PartnersViewSet, basename="Partners")
+route.register(r'viabilities', partnersviewsets.ViabilityViewSet)
+route.register(r'viability-results', partnersviewsets.ViabilityResultViewSet)
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    # path('', include(route.urls)),
     path('', include(route.urls)),
 ]

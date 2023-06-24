@@ -5,6 +5,13 @@ from partners import models
 
 
 class PartnersViewSet(viewsets.ModelViewSet):
-
-    serializer_class = serializers.PartnersSerializer
     queryset = models.Partners.objects.all()
+    serializer_class = serializers.PartnersSerializer
+
+class ViabilityViewSet(viewsets.ModelViewSet):
+    queryset = models.Viability.objects.all()
+    serializer_class = serializers.ViabilitySerializer
+
+class ViabilityResultViewSet(viewsets.ModelViewSet):
+    queryset = models.ViabilityResult.objects.all()
+    serializer_class = serializers.ViabilityResultSerializer
